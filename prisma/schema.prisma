@@ -1,0 +1,180 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo de usuários do sistema
+model User {
+  id                  String    @id @default(cuid())
+  name                String?
+  email               String    @unique
+  emailVerified       DateTime?
+  password            String
+  image               String?
+  role                UserRole  @default(ANALYST)
+  allowedDepartments  String[]  @default([]) // Array de secretarias permitidas. Vazio = todas
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  
+  datasets      Dataset[]
+  analyses      Analysis[]
+  reports       Report[]
+  
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN           // Administrador completo
+  MANAGER         // Gestor - acesso a todos dados e relatórios
+  ANALYST         // Analista - acesso a análises e relatórios
+  VIEWER          // Visualizador - apenas leitura
+}
+
+// Dataset carregado pelo usuário
+model Dataset {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  fileName    String
+  fileSize    Int
+  fileType    String
+  uploadedAt  DateTime @default(now())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  records     AbsenceRecord[]
+  analyses    Analysis[]
+  
+  // Metadados do arquivo
+  totalRecords     Int
+  dateRangeStart   DateTime?
+  dateRangeEnd     DateTime?
+  columnMapping    Json  // Mapeamento das colunas
+  
+  @@map("datasets")
+}
+
+// Registros de afastamento (dados reais)
+model AbsenceRecord {
+  id                String   @id @default(cuid())
+  datasetId         String
+  dataset           Dataset  @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  
+  // Informações do servidor (anonimizado)
+  employeeId        String   // Matrícula anonimizada
+  sex               String?  // M/F
+  age               Int?
+  ageGroup          String?  // ex: 20-29, 30-39
+  
+  // Informações organizacionais
+  department        String?  // Secretaria
+  position          String?  // Cargo
+  employmentType    String?  // Tipo de vínculo
+  
+  // Informações do afastamento
+  cidCode           String   // CID completo (ex: F32.1)
+  cidChapter        String   // Capítulo do CID (ex: F)
+  cidGroup          String   // Grupo do CID (ex: F32)
+  cidDescription    String?  // Descrição do CID
+  
+  startDate         DateTime // Data início afastamento
+  endDate           DateTime? // Data fim afastamento
+  daysAbsent        Int      // Quantidade de dias
+  
+  // Análises temporais
+  dayOfWeek         String?  // Segunda, Terça, etc
+  month             Int?     // 1-12
+  year              Int?
+  isMonday          Boolean  @default(false)
+  isBeforeHoliday   Boolean  @default(false)
+  
+  // Classificações
+  diseaseCategory   String?  // Mental, Musculoesquelética, etc
+  isRecurrent       Boolean  @default(false)
+  isProlonged       Boolean  @default(false) // > 15 dias
+  
+  createdAt         DateTime @default(now())
+  
+  @@index([datasetId])
+  @@index([cidCode])
+  @@index([department])
+  @@index([startDate])
+  @@map("absence_records")
+}
+
+// Análises geradas pelo sistema
+model Analysis {
+  id          String   @id @default(cuid())
+  title       String
+  type        AnalysisType
+  datasetId   String
+  dataset     Dataset  @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Resultados da análise
+  results     Json     // Dados estruturados da análise
+  summary     String   @db.Text // Resumo textual gerado pela IA
+  insights    String   @db.Text // Insights e recomendações
+  
+  // Filtros aplicados
+  filters     Json?
+  
+  createdAt   DateTime @default(now())
+  
+  reports     Report[]
+  
+  @@map("analyses")
+}
+
+enum AnalysisType {
+  GENERAL_OVERVIEW      // Visão geral
+  CID_ANALYSIS          // Análise por CID
+  DEPARTMENT_ANALYSIS   // Análise por secretaria
+  TEMPORAL_ANALYSIS     // Análise temporal
+  RECURRENCE_ANALYSIS   // Análise de reincidência
+  PATTERN_DETECTION     // Detecção de padrões
+  DEMOGRAPHIC_ANALYSIS  // Análise demográfica
+  CUSTOM                // Análise personalizada
+}
+
+// Relatórios exportáveis
+model Report {
+  id          String     @id @default(cuid())
+  title       String
+  description String?
+  type        ReportType
+  format      ReportFormat
+  
+  analysisId  String?
+  analysis    Analysis?  @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+  
+  userId      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  content     Json       // Conteúdo estruturado do relatório
+  fileUrl     String?    // URL do arquivo gerado (se aplicável)
+  
+  createdAt   DateTime   @default(now())
+  
+  @@map("reports")
+}
+
+enum ReportType {
+  EXECUTIVE_SUMMARY    // Resumo executivo
+  TECHNICAL_REPORT     // Relatório técnico completo
+  DASHBOARD_SNAPSHOT   // Captura do dashboard
+  CUSTOM               // Relatório personalizado
+}
+
+enum ReportFormat {
+  PDF
+  DOCX
+  EXCEL
+  JSON
+}

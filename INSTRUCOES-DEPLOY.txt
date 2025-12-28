@@ -1,0 +1,280 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║    🎉 SISTEMA PRONTO PARA DEPLOY VIA GITHUB                   ║
+║       MÉTODO MAIS FÁCIL - SEM INSTALAR NADA!                  ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+🚀 MÉTODO RECOMENDADO: Deploy via Interface Web
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Como você já está conectado na Vercel via GitHub, use o método
+mais simples de todos - apenas arrastar e soltar arquivos!
+
+📖 SIGA ESTE GUIA: deploy-via-github.md
+
+Esse guia tem 5 passos super simples:
+1. Criar repositório no GitHub (2 min)
+2. Upload dos arquivos via navegador (1 min)
+3. Criar banco de dados Neon (1 min)
+4. Importar projeto na Vercel (2 min)
+5. Acessar sistema online (imediato!)
+
+
+📝 CREDENCIAIS QUE VOCÊ VAI USAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👤 ADMINISTRADOR (Acesso Total)
+   Email: admin@sistema.com
+   Senha: Admin@123
+
+👤 GESTOR (Exemplo - Acesso Limitado)
+   Email: gestor@sistema.com
+   Senha: Gestor@123
+   Acesso: Secretaria de Saúde + Educação
+
+👤 ANALISTA (Exemplo - Acesso Restrito)
+   Email: analista@sistema.com
+   Senha: Analista@123
+   Acesso: Apenas Secretaria de Saúde
+
+
+🔧 VARIÁVEIS DE AMBIENTE NECESSÁRIAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ao fazer deploy na Vercel, adicione estas variáveis:
+
+1️⃣ DATABASE_URL
+   Value: postgresql://usuario:senha@host.neon.tech/db?sslmode=require
+   (Cole a Connection String do Neon)
+
+2️⃣ NEXTAUTH_SECRET
+   Value: vZLmH8UXN3KR9jP2tFqWnYbC5xDe7aGkPn4sLtJwQx
+
+3️⃣ NEXTAUTH_URL
+   Value: https://seu-projeto.vercel.app
+   (Use o nome que aparece na tela da Vercel)
+
+4️⃣ OPENAI_API_KEY (Opcional)
+   Value: sk-proj-... (se tiver chave OpenAI)
+   Deixe vazio se não tiver - sistema funciona sem IA
+
+
+📂 ARQUIVOS IMPORTANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ deploy-via-github.md
+   → Guia passo-a-passo com prints
+
+✅ DEPLOY_COMPLETO.md
+   → Tutorial detalhado de 10 páginas
+
+✅ prisma/seed-manual.sql
+   → SQL para criar usuários se o seed automático falhar
+
+✅ .gitignore
+   → Já configurado (não envia .env e node_modules)
+
+✅ vercel.json
+   → Configurações da Vercel já otimizadas
+
+✅ package.json
+   → Scripts de build configurados para produção
+
+
+🎯 RESUMO DO PROCESSO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─ Você faz ─────────────────────────────────────────────────────┐
+│                                                                 │
+│  1. Cria repositório: https://github.com/new                   │
+│  2. Faz upload dos arquivos desta pasta                        │
+│  3. Cria banco: https://neon.tech                              │
+│  4. Importa na Vercel: https://vercel.com/new                  │
+│  5. Adiciona 3-4 variáveis de ambiente                         │
+│  6. Clica "Deploy"                                             │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ Sistema faz automaticamente ──────────────────────────────────┐
+│                                                                 │
+│  ✅ Instala dependências                                        │
+│  ✅ Gera Prisma Client                                          │
+│  ✅ Cria tabelas no banco                                       │
+│  ✅ Popula usuários iniciais                                    │
+│  ✅ Faz build da aplicação                                      │
+│  ✅ Publica na web                                              │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ Resultado ────────────────────────────────────────────────────┐
+│                                                                 │
+│  🌐 URL: https://sistema-absenteismo.vercel.app                │
+│  👤 Login: admin@sistema.com                                    │
+│  🔒 Senha: Admin@123                                            │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+
+⏱️ TEMPO TOTAL: 5-7 minutos
+💰 CUSTO: R$ 0,00 (100% gratuito)
+📊 CAPACIDADE: Milhares de acessos/mês
+
+
+🔒 IMPORTANTE - APÓS PRIMEIRO LOGIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Faça login com admin@sistema.com
+2. Vá em Configurações (⚙️)
+3. ALTERE A SENHA imediatamente
+4. Configure seu perfil
+5. Crie usuários para sua equipe
+
+
+📋 CHECKLIST DE DEPLOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Antes de começar:
+□ Conta GitHub criada
+□ Conta Vercel conectada ao GitHub
+□ Navegador aberto
+
+Passo 1 - GitHub (2 min):
+□ Repositório criado
+□ Todos arquivos enviados
+□ Commit realizado
+
+Passo 2 - Banco (1 min):
+□ Conta Neon criada
+□ Projeto PostgreSQL criado
+□ Connection String copiada
+□ String tem ?sslmode=require no final
+
+Passo 3 - Vercel (2 min):
+□ Repositório importado
+□ Framework detectado como Next.js
+□ DATABASE_URL configurada
+□ NEXTAUTH_SECRET configurada
+□ NEXTAUTH_URL configurada
+□ Deploy iniciado
+
+Passo 4 - Validação (2 min):
+□ Build finalizado sem erros
+□ URL recebida
+□ Site acessível no navegador
+□ Página de login aparecendo
+
+Passo 5 - Primeiro Acesso:
+□ Login com admin@sistema.com funcionou
+□ Dashboard carregou
+□ Senha alterada
+□ Perfil configurado
+
+
+🆘 SE ALGO DER ERRADO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Build Failed na Vercel:
+   1. Clique no deployment falhado
+   2. Veja os logs de erro
+   3. Geralmente é DATABASE_URL incorreta
+   4. Verifique se tem ?sslmode=require no final
+   5. Adicione novamente em Settings → Environment Variables
+
+❌ Login não funciona / User not found:
+   1. Usuários não foram criados no banco
+   2. Vá em: https://console.neon.tech
+   3. Abra seu projeto
+   4. Clique em "SQL Editor"
+   5. Cole o conteúdo de: prisma/seed-manual.sql
+   6. Execute (botão Run)
+
+❌ Página em branco ou 404:
+   1. Limpe cache do navegador (Ctrl+Shift+Delete)
+   2. Tente em modo anônimo
+   3. Verifique se a URL está correta
+   4. Aguarde 1-2 minutos (propagação DNS)
+
+❌ Internal Server Error:
+   1. Vercel → Deployments → Clique no deployment
+   2. Aba "Functions" → veja logs de erro
+   3. Geralmente é erro de conexão com banco
+   4. Teste a DATABASE_URL em outro client (DBeaver/pgAdmin)
+
+❌ Function Timeout em uploads:
+   1. Vercel → Settings → Functions
+   2. Serverless Function Timeout → 60 seconds
+   3. Save
+
+
+📞 RECURSOS DE SUPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 Documentação Vercel: https://vercel.com/docs
+📖 Documentação Neon: https://neon.tech/docs
+📖 Tutoriais YouTube: "deploy next.js vercel"
+💬 Discord Vercel: https://vercel.com/discord
+📧 Suporte Vercel: support@vercel.com
+
+
+✨ FUNCIONALIDADES DO SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Após o deploy, você terá acesso a:
+
+📊 Dashboards:
+   • Visão Geral - KPIs e métricas principais
+   • Análise Temporal - Evolução mensal, semanal, sazonal
+   • Análise de CID - Doenças mais comuns (CID-10)
+   • Detecção de Padrões - Anomalias e alertas
+
+📈 Gráficos Interativos:
+   • Alternar tipo (linha, barra, pizza, rosca)
+   • Linha de tendência automática
+   • Definir metas e objetivos
+   • Exportar para PNG
+
+🤖 Análise por IA (se tiver OpenAI):
+   • Introdução contextual
+   • Análise automática de resultados
+   • Insights e recomendações
+   • Alertas inteligentes
+
+📄 Relatórios:
+   • Exportar PDF profissional
+   • Exportar Word (DOCX)
+   • Imprimir
+   • Com gráficos e análises
+
+📤 Upload de Dados:
+   • Excel (.xls, .xlsx, .xlsb)
+   • CSV
+   • SQL
+   • Até 120MB por arquivo
+
+👥 Gestão de Usuários:
+   • 4 níveis de acesso (Admin, Gestor, Analista, Visualizador)
+   • Permissões por departamento/secretaria
+   • Controle granular
+
+⚙️ Configurações:
+   • Personalização do sistema
+   • Gerenciamento de perfil
+   • Alteração de senha
+   • Preferências
+
+
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║    ✅ TUDO PRONTO PARA DEPLOY!                                ║
+║                                                                ║
+║    📖 Abra: deploy-via-github.md                              ║
+║                                                                ║
+║    Siga os 5 passos e em poucos minutos                       ║
+║    seu sistema estará ONLINE! 🚀                              ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+
+Desenvolvido para o setor público brasileiro 🇧🇷
+Next.js 14 • PostgreSQL • Prisma • Chart.js • OpenAI

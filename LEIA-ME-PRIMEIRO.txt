@@ -1,0 +1,260 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║    🎉 SISTEMA DE ANÁLISE DE ABSENTEÍSMO                        ║
+║       100% CONFIGURADO E PRONTO PARA DEPLOY                   ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+📋 INFORMAÇÕES DO SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Nome: Sistema de Análise de Absenteísmo-Doença
+Versão: 1.0.0
+Tecnologias: Next.js 14 + PostgreSQL + Prisma + OpenAI
+Hospedagem: Vercel (gratuita)
+Status: ✅ PRONTO PARA PRODUÇÃO
+
+
+🚀 COMO COLOCAR O SISTEMA ONLINE (5 MINUTOS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 MÉTODO AUTOMÁTICO (Recomendado)
+   
+   Execute no PowerShell:
+   
+   .\deploy-automatico.bat
+   
+   O script vai:
+   ✅ Configurar tudo automaticamente
+   ✅ Fazer login na Vercel
+   ✅ Solicitar banco de dados
+   ✅ Fazer deploy completo
+   ✅ Criar usuário administrador
+   
+
+📍 MÉTODO MANUAL (Passo-a-passo)
+
+   Consulte o arquivo: DEPLOY_COMPLETO.md
+   
+   Contém guia detalhado com:
+   - Print screens
+   - Solução de problemas
+   - Links diretos
+   - Vídeos tutoriais
+
+
+📦 PRÉ-REQUISITOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ Conta Vercel (Hospedagem - Gratuita)
+   → https://vercel.com/signup
+   → Continue with GitHub
+   
+2️⃣ Banco PostgreSQL (Escolha um):
+   
+   OPÇÃO A - Neon (Recomendado)
+   → https://neon.tech
+   → Create Project
+   → Copie a Connection String
+   
+   OPÇÃO B - Supabase
+   → https://supabase.com
+   → New Project
+   → Settings → Database → Connection String
+
+
+🎯 APÓS O DEPLOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 URL DE ACESSO:
+   https://seu-projeto.vercel.app
+   (você receberá a URL após o deploy)
+
+👤 CREDENCIAIS DE ADMINISTRADOR:
+   Email: admin@sistema.com
+   Senha: Admin@123
+   
+   ⚠️ IMPORTANTE: Altere a senha após o primeiro login!
+
+
+✨ FUNCIONALIDADES DISPONÍVEIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Upload de Dados (até 120MB)
+   - Excel (.xls, .xlsx, .xlsb)
+   - CSV
+   - SQL
+
+✅ Dashboards Interativos
+   - Visão geral com KPIs
+   - Análise temporal (mês, dia, estação)
+   - Análise de CID-10 (doenças)
+   - Detecção de padrões e anomalias
+
+✅ Gráficos Dinâmicos
+   - Alternar tipo (linha, barra, pizza, rosca)
+   - Linha de tendência automática
+   - Definir metas/objetivos
+   - Exportar para PNG
+
+✅ Análise por IA
+   - Introdução contextual antes dos gráficos
+   - Análise de resultados após os gráficos
+   - Insights automáticos
+   - Recomendações personalizadas
+
+✅ Relatórios Profissionais
+   - Exportar em PDF
+   - Exportar em Word (DOCX)
+   - Imprimir
+   - Com gráficos e análises
+
+✅ Controle de Acesso
+   - 4 níveis (Admin, Gestor, Analista, Visualizador)
+   - Permissão por departamento/secretaria
+   - Gestão de usuários
+
+✅ Configurações
+   - Personalizar sistema
+   - Gerenciar perfil
+   - Alterar senha
+
+
+📚 DOCUMENTAÇÃO COMPLETA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 README.md
+   → Visão geral do projeto
+
+📄 DEPLOY_COMPLETO.md
+   → Guia detalhado de deploy (10 páginas)
+   → Solução de problemas
+   → Links e vídeos
+
+📄 deploy-automatico.bat
+   → Script de instalação automática
+   → Execute e pronto!
+
+📄 docs/MANUAL_USUARIO_WEB.md
+   → Manual completo do usuário
+   → Como usar cada funcionalidade
+
+📄 docs/INICIO_RAPIDO.md
+   → Primeiros passos
+   → Guia de uso básico
+
+📄 docs/COMO-GERAR-MANUAL-PDF.md
+   → Como gerar manual com screenshots
+
+
+🔧 SOLUÇÃO RÁPIDA DE PROBLEMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ "npm not found" ou "node not found"
+   → Instale Node.js: https://nodejs.org
+   → Reinicie o terminal
+
+❌ "Build Failed" na Vercel
+   → Verifique DATABASE_URL nas variáveis de ambiente
+   → Certifique-se que termina com ?sslmode=require
+
+❌ "Unable to connect to database"
+   → Verifique se o banco PostgreSQL está online
+   → Teste a connection string no pgAdmin ou DBeaver
+
+❌ "Login não funciona"
+   → Execute: npx prisma db seed
+   → Isso cria o usuário administrador
+
+❌ "Function Timeout"
+   → Vercel → Settings → Functions
+   → Aumente Timeout para 60 seconds
+
+
+🆓 PLANO GRATUITO (Mais que suficiente!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vercel (Hospedagem):
+✅ 100 GB de banda/mês
+✅ Deployments ilimitados
+✅ HTTPS automático
+✅ Domínio .vercel.app gratuito
+
+Neon (Banco de Dados):
+✅ 512 MB de storage
+✅ 1 projeto
+✅ Backups diários
+✅ 100 horas compute/mês
+
+Suporta milhares de acessos mensais!
+
+
+🎓 TUTORIAIS EM VÍDEO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pesquise no YouTube:
+
+"Como fazer deploy Next.js Vercel"
+"Neon database tutorial"
+"PostgreSQL Supabase tutorial"
+"Vercel environment variables"
+
+
+💡 DICAS IMPORTANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Use HTTPS sempre (Vercel fornece automaticamente)
+✓ Altere as senhas padrão imediatamente
+✓ Faça backup regular do banco de dados
+✓ Configure domínio personalizado (opcional)
+✓ Monitore logs na Vercel para erros
+✓ Use ambiente de produção para dados reais
+
+
+📞 SUPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Documentação Vercel: https://vercel.com/docs
+Documentação Neon: https://neon.tech/docs
+Comunidade Vercel: https://vercel.com/discord
+
+Consulte sempre DEPLOY_COMPLETO.md para dúvidas!
+
+
+✅ CHECKLIST DE DEPLOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Antes de começar:
+□ Conta Vercel criada
+□ Conta GitHub conectada
+□ Banco PostgreSQL criado (Neon ou Supabase)
+□ Connection string do banco copiada
+□ Git instalado (para método automático)
+
+Após executar deploy-automatico.bat:
+□ Deploy finalizado sem erros
+□ URL do sistema recebida
+□ Login funcionando
+□ Dashboard acessível
+□ Upload de dados testado
+
+Pós-deploy:
+□ Senha do admin alterada
+□ Usuários criados
+□ Dados importados
+□ Permissões configuradas
+
+
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║    🚀 PRONTO PARA COMEÇAR!                                     ║
+║                                                                ║
+║    Execute: .\deploy-automatico.bat                           ║
+║                                                                ║
+║    Em 5 minutos seu sistema estará ONLINE! 🎉                 ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+
+Desenvolvido com ❤️ para o setor público brasileiro
+Next.js 14 • PostgreSQL • Prisma • Chart.js • OpenAI
