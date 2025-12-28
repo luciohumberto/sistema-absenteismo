@@ -228,8 +228,12 @@ export async function generateWordReport(data: ReportData): Promise<Blob> {
         spacing: { before: 300, after: 200 }
       }),
       new Paragraph({
-        text: 'Os gráficos estão disponíveis no relatório em PDF ou na interface web do sistema.',
-        italics: true,
+        children: [
+          new TextRun({
+            text: 'Os gráficos estão disponíveis no relatório em PDF ou na interface web do sistema.',
+            italics: true
+          })
+        ],
         spacing: { after: 200 }
       })
     )
