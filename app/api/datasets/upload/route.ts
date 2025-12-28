@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
         fileType: file.type,
         totalRecords: data.length,
         columnMapping: columnMapping,
-        userId: 'admin-id', // TODO: pegar do session
+        userId: 'admin-001', // User ID do admin
       },
     })
 
