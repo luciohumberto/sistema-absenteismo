@@ -147,12 +147,12 @@ export async function generatePDFReport(data: ReportData): Promise<Blob> {
     } else if (section.type === 'table' && section.data) {
       checkPageBreak(30)
       
-      const tableData = section.data.map(row => Object.values(row))
+      const tableData = section.data.map(row => Object.values(row).map(val => String(val ?? '')))
       const headers = section.data.length > 0 ? Object.keys(section.data[0]) : []
 
       autoTable(doc, {
         head: [headers],
-        body: tableData,
+        body: tableData as any,
         startY: yPosition,
         margin: { left: margin, right: margin },
         styles: {
