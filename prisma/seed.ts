@@ -9,7 +9,7 @@ async function main() {
   // Criar usuários
   console.log('👤 Criando usuários...')
   
-  const hashedPassword = await bcrypt.hash('admin123', 10)
+  const hashedPassword = await bcrypt.hash('Admin@123', 10)
 
   const admin = await prisma.user.upsert({
     where: { email: 'admin@sistema.com' },
@@ -60,7 +60,7 @@ async function main() {
   console.log(`   - Gestor: gestor@sistema.com`)
   console.log(`   - Analista: analista@sistema.com`)
   console.log(`   - Viewer: viewer@sistema.com`)
-  console.log(`   - Senha para todos: admin123`)
+  console.log(`   - Senha para todos: Admin@123`)
 
   // Criar dataset de exemplo
   console.log('📊 Criando dataset de exemplo...')
