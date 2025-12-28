@@ -111,7 +111,7 @@ export default function LoginPage() {
 
             <div className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
               <p>Usuário demo: admin@sistema.com</p>
-              <p>Senha: admin123</p>
+              <p>Senha: Admin@123</p>
             </div>
           </CardContent>
         </Card>
